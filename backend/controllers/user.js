@@ -9,13 +9,13 @@ exports.signup = (req, res, next) => {
                 email: req.body.email,
                 password: hash
             });
-            user.save().then(
+           user.save().then(
                 () => 
                     res.status(201).json({
                         message: 'User added successfully!'}))
                     .catch((error) => 
                     res.status(400).json({ message: 'Email already in use!'}))
-            .catch(
+            .catch( 
                 (error) => {
                     res.status(500).json({
                         error: error
